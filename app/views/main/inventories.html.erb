@@ -1,0 +1,21 @@
+<h1>Main#inventories</h1>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">item_id</th>
+      <th scope="col">price</th>
+      <th scope="col">timestamp</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <% @inventory.each do |inv|%>
+        <tr>
+            <td><%=inv.item_id%></td>
+            <td><%=inv.price%></td>
+            <td><%=inv.updated_at%></td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>

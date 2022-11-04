@@ -1,0 +1,29 @@
+<h1>Main#user_item</h1>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Stock</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <% @store.each do |item|%>
+    <tr>
+        <td><%=item.name.to_s%></td>
+        <td><%=item.price.to_s%></td>
+        <td><%=item.stock.to_s%></td>
+        <td>
+            <div class = 'd-grid gap-2 d-md-block'>
+                <%= link_to "Edit Item", edit_item_path(item.id), method: :get , class: 'btn btn-outline-secondary' %>
+                <%= link_to "Destroy this Item", item, method: :delete , class: 'btn btn-outline-danger' %>
+            </div>
+        </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<%= link_to "Create new item", new_item_path , class: 'btn btn-success'%>
